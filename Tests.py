@@ -11,8 +11,6 @@ class TestProgram:
         login_page.go_to_site()
         login_page.login()
         login_page.password()
-        # Проверка под сомнением!!!
-        assert browser.title == 'Авторизация', "Ошибка Логина"
 
     @allure.title('Тест подсчета писем')
     @allure.feature('Count letters')
@@ -22,11 +20,11 @@ class TestProgram:
         count_page.quantity_letters()
         count_page.write_letter()
         xpath_for_vhod = browser.find_element_by_xpath("//span[@class='badge__text']")
-        for i in range(0, 10):
+        for i in range(1, 10):
             if i == xpath_for_vhod.text:
-                assert browser.title == f'({i}) Входящие - Почта Mail.ru', "Ошибка отправки письма"
-            else:
-                break
+                assert browser.title == f'({i}) Входящие - Почта Mail.ru', "Ошибка заголовка"
+            elif i != xpath_for_vhod.text:
+                assert browser.title == 'Входящие - Почта Mail.ru', "Ошибка отправки письма"
 
     @allure.title('Тест чтения писем')
     @allure.feature('Read letters')
