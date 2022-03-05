@@ -35,7 +35,6 @@ class LoginProgram(BasePage):
 class CountAndWriteLetter(BasePage):
     def quantity_letters(self):
         counter = self.count_letters(ChromeLocators.LOCATOR_COUNT_LETTERS)
-        self.quantity = 0
         for i in counter:
             if i.text == 'Simbirsoft Тестовое задание' or 'Simbirsoft Тестовое задание.Сайганов':
                 self.quantity += 1

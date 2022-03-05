@@ -7,6 +7,7 @@ class BasePage:
     def __init__(self, driver):
         self.driver = driver
         self.base_url = "https://account.mail.ru/login"
+        self.quantity = 0
 
     def driverwait(self, locator):
         return WebDriverWait(self.driver, 20).until(ec.visibility_of_element_located(locator))
