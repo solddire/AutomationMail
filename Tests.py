@@ -23,8 +23,6 @@ class TestProgram:
         for i in range(1, 10):
             if i == xpath_for_vhod.text:
                 assert browser.title == f'({i}) Входящие - Почта Mail.ru', "Ошибка заголовка"
-            elif i != xpath_for_vhod.text:
-                assert browser.title == 'Входящие - Почта Mail.ru', "Ошибка отправки письма"
 
     @allure.title('Тест чтения писем')
     @allure.feature('Read letters')
