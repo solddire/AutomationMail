@@ -7,7 +7,7 @@ from selenium.webdriver import DesiredCapabilities
 def browser():
     capabilities = DesiredCapabilities.CHROME
     driver = webdriver.Remote(
-        command_executor='http://192.168.0.118:4444',
+        command_executor='http://192.168.0.103:4444',
         desired_capabilities=capabilities
     )
     driver.maximize_window()
